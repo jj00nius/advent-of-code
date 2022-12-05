@@ -12,10 +12,13 @@
 # Prompt user for an input
 def get_input():
     pair_assignments = input('Provide assignments: \n')
+    pair_list = list(pair_assignments)
+    return pair_list
 
-def check_assignments(pair_assignments):
-    list(pair_assignments)
-    for pair in pair_assignments:
+def check_assignments(pair_list):
+    for pair in pair_list:
         if (pair[0][0] <= pair[1][0] and pair[0][1] >= pair[1][1]) or (pair[0][0] >= pair[1][0] and pair[0][1] <= pair[1][1]):
+            print("data calculation complete")
 
 get_input()
+check_assignments(pair_list)
