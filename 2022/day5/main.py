@@ -1,4 +1,5 @@
 import csv
+import numpy
 # [V]     [B]                     [C]
 # [C]     [N] [G]         [W]     [P]
 # [W]     [C] [Q] [S]     [C]     [M]
@@ -18,18 +19,14 @@ import pandas as pd
 import csv
 from collections import defaultdict
  
-# reading the csv file using read_csv
-# storing the data frame in variable called df
+# reading the csv file using read_csv storing the data frame in variable called df
 df = pd.read_csv('input.csv')
  
-# creating a list of column names by
-# calling the .columns
+# creating a list of column names by calling the columns
 list_of_column_names = list(df.columns)
- 
-# displaying updated list of column names
-# print(list_of_column_names)
 
-columns = defaultdict(list) # each value in each column is appended to a list
+# each value in each column is appended to a list
+columns = defaultdict(list) 
 
 with open('input.csv') as format:
     # read rows into a dictionary format
@@ -41,27 +38,25 @@ with open('input.csv') as format:
             # append the value into the appropriate list
             columns[column_name].append(value)
 
-# Evaluate first row to create a list
-string_input = [columns['AMOUNT'][0],columns['SOURCE'][0],columns['DESTINATION'][0]]
+for i in columns['AMOUNT']:
+    # Evaluate first row to create a list
+    number = eval(i)
+    string_input = columns['AMOUNT'][number - 1],columns['SOURCE'][number - 1],columns['DESTINATION'][number - 1]
 
-# Convert list to numerical
-num_input = [eval(i) for i in string_input]
+    # Convert list to numerical
+    num_input = [eval(i) for i in string_input]
 
-# Print numerical list
-# print(num_input)
+    amount = range(num_input[0])
+    source = puzzle_input[num_input[1] - 1]
+    destination = puzzle_input[num_input[2] - 1]
 
-amount = range(num_input[0])
-source = puzzle_input[num_input[1] - 1]
-destination = puzzle_input[num_input[2] - 1]
-print(source, destination)
+    # move crates
+    for i in amount:
+        if bool(source):
+            crate = (source[-1])
+            destination.append(crate)
+            source.pop(-1)
+        else:
+            continue
 
-print(source[-1])
-print(destination[-1])
-for i in amount:
-    crate = (source[-1])
-    destination.append(crate)
-    source.pop(-1)
-    print(source, destination)
-
-# puzzle_input.append()
-# puzzle_input.pop()
+print(puzzle_input)
