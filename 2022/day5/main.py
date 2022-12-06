@@ -9,9 +9,9 @@ import csv
 # [Q] [D] [P] [L] [V] [D] [D] [C] [Z]
 #  1   2   3   4   5   6   7   8   9 
 
-# puzzle_input = [['Q','F','M','R','L','W','C','V'],['D','Q','L'],['P','S','R','G','W','C','N','B'],
-# ['L','C','D','H','B','Q','G'],['V','G','L','F','Z','S'],['D','G','N','P'],['D','Z','P','V','F','C','W'],
-# ['C','P','D','M','S'],['Z','N','W','T','V','M','P','C']]
+puzzle_input = [['Q','F','M','R','L','W','C','V'],['D','Q','L'],['P','S','R','G','W','C','N','B'],
+['L','C','D','H','B','Q','G'],['V','G','L','F','Z','S'],['D','G','N','P'],['D','Z','P','V','F','C','W'],
+['C','P','D','M','S'],['Z','N','W','T','V','M','P','C']]
 
 # importing the pandas library
 import pandas as pd
@@ -49,3 +49,11 @@ num_input = [eval(i) for i in string_input]
 
 # Print numerical list
 print(num_input)
+
+amount = num_input[0]
+source = num_input[1]
+destination = num_input[2]
+
+
+puzzle_input.append()
+puzzle_input.pop()
