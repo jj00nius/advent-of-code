@@ -48,12 +48,20 @@ string_input = [columns['AMOUNT'][0],columns['SOURCE'][0],columns['DESTINATION']
 num_input = [eval(i) for i in string_input]
 
 # Print numerical list
-print(num_input)
+# print(num_input)
 
-amount = num_input[0]
-source = num_input[1]
-destination = num_input[2]
+amount = range(num_input[0])
+source = puzzle_input[num_input[1] - 1]
+destination = puzzle_input[num_input[2] - 1]
+print(source, destination)
 
+print(source[-1])
+print(destination[-1])
+for i in amount:
+    crate = (source[-1])
+    destination.append(crate)
+    source.pop(-1)
+    print(source, destination)
 
-puzzle_input.append()
-puzzle_input.pop()
+# puzzle_input.append()
+# puzzle_input.pop()
