@@ -1,4 +1,4 @@
-ACTION,AMOUNT,ACTION2,SOURCE,ACTION3,DESTINATION
+
 move,1,from,9,to,2
 move,4,from,6,to,1
 move,4,from,2,to,6

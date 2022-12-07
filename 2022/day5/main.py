@@ -50,6 +50,7 @@ for i in columns['AMOUNT']:
     source = puzzle_input[num_input[1] - 1]
     destination = puzzle_input[num_input[2] - 1]
 
+
     # move crates
     for i in amount:
         if bool(source):
